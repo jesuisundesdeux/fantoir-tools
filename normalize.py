@@ -459,7 +459,7 @@ with open("README.md", 'a') as docfile:
                 for street in alldatas[codedep]['towns'][codetown]['streets']:
                     townfile.write(street)
 
-        docfile.write("* %s - %s\n" % (codedep, alldatas[codedep]['name']))
+        docfile.write("* **%s - %s**\n" % (codedep, alldatas[codedep]['name']))
         docfile.write("  * Nombre de communes   : %s\n" % nbtowns)
         docfile.write("  * Nombre d'adresses    : %s\n" % nbstreets)
 
