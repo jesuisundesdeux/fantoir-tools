@@ -28,6 +28,7 @@ def replace_words(words, text):
 def normalize(text):
     text = text.replace("-"," " )
     text = text.replace("'"," ")
+    text = text.replace("\""," ")
     text = text.replace("/"," ")
     text = " ".join(text.split())
     text = replace_words(REPLACE_WORDS,text)
@@ -267,23 +268,20 @@ with open(fantoir_file, 'rb') as textfile:
                 cdir =  line[2:3].strip()
                 libelle =  line[11:41].strip()
 
-                if cdir!="0":
-                    codedep = "%(cdep)s-%(cdir)s" % locals()
+                if cdir!="0" and cdep=="97":
+                    codedep = "%(cdep)s%(cdir)s" % locals()
                 else:
                     codedep = "%(cdep)s" % locals()
                 
-                if codedep in alldatas:
-                    print ("ERROR")
-                    sys.exit()
-
-                alldatas[codedep] = {
-                    'name': libelle,
-                    'towns': {
+                if codedep not in alldatas:
+                    alldatas[codedep] = {
+                        'name': libelle,
+                        'towns': {
+                        }
                     }
-                }
+                    depname = "%(codedep)s - %(libelle)s" % locals()
+                    print ("Analyze %(depname)s" % locals())
 
-                depname = "%(cdep)s - %(libelle)s" % locals()
-                print ("Analyze %(depname)s" % locals())
             else:
                 # Town record
                 # 1 2 2 X Code département
@@ -320,8 +318,8 @@ with open(fantoir_file, 'rb') as textfile:
                 dann = line[74:81].strip()
                 dcre = line[81:88].strip()
 
-                if cdir!="0":
-                    codedep = "%(cdep)s-%(cdir)s" % locals()
+                if cdir!="0" and cdep=="97":
+                    codedep = "%(cdep)s%(cdir)s" % locals()
                 else:
                     codedep = "%(cdep)s" % locals()
 
@@ -421,8 +419,8 @@ with open(fantoir_file, 'rb') as textfile:
                 if nvoie in TYPE_VOIE:
                     voie=TYPE_VOIE[nvoie]
 
-                if cdir!="0":
-                    codedep = "%(cdep)s-%(cdir)s" % locals()
+                if cdir!="0" and cdep=="97":
+                    codedep = "%(cdep)s%(cdir)s" % locals()
                 else:
                     codedep = "%(cdep)s" % locals()
 
@@ -440,7 +438,8 @@ with open("README.md", 'a') as docfile:
     for codedep in alldatas:
         # Create folder
         depname = alldatas[codedep]['name']
-        path = "datas/%(codedep)s-%(depname)s" %locals()
+        repname = normalize(depname)
+        path = "datas/%(codedep)s-%(repname)s" %locals()
         os.makedirs(path)
 
         nbtowns = len(alldatas[codedep]['towns']) 
@@ -451,7 +450,7 @@ with open("README.md", 'a') as docfile:
             allnbstreets += len(alldatas[codedep]['towns'][codetown]['streets'])
 
             # Save normalized streets to file
-            filename = "%s/%s-%s" % (path,codetown,alldatas[codedep]['towns'][codetown]['name'])
+            filename = "%s/%s-%s.csv" % (path,codetown,normalize(alldatas[codedep]['towns'][codetown]['name']))
             with open(filename, 'w') as townfile:
                 export = "cdep;cdir;ccom;crivo;nvoie;voie;lstreet;lstreet_norm;tcom;crur;cpol;prel;ppart;pfict;cann;dann;dcre;cmajic;tvoie;cdit;dmot\n"
                 townfile.write(export)

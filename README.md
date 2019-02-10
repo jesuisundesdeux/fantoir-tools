@@ -48,12 +48,9 @@ Result of above command
 * **12 - AVEYRON**
   * Nombre de communes   : 304
   * Nombre d'adresses    : 69220
-* **13-1 - BOUCHES DU RHONE**
-  * Nombre de communes   : 52
-  * Nombre d'adresses    : 20950
-* **13-2 - BOUCHES DU RHONE**
-  * Nombre de communes   : 98
-  * Nombre d'adresses    : 36812
+* **13 - BOUCHES DU RHONE**
+  * Nombre de communes   : 150
+  * Nombre d'adresses    : 57762
 * **14 - CALVADOS**
   * Nombre de communes   : 715
   * Nombre d'adresses    : 209284
@@ -192,12 +189,9 @@ Result of above command
 * **58 - NIEVRE**
   * Nombre de communes   : 312
   * Nombre d'adresses    : 62035
-* **59-1 - NORD**
-  * Nombre de communes   : 304
-  * Nombre d'adresses    : 43264
-* **59-2 - NORD**
-  * Nombre de communes   : 349
-  * Nombre d'adresses    : 28346
+* **59 - NORD**
+  * Nombre de communes   : 653
+  * Nombre d'adresses    : 71610
 * **60 - OISE**
   * Nombre de communes   : 693
   * Nombre d'adresses    : 60597
@@ -243,21 +237,9 @@ Result of above command
 * **74 - HAUTE SAVOIE**
   * Nombre de communes   : 294
   * Nombre d'adresses    : 69833
-* **75-4 - PARIS**
-  * Nombre de communes   : 12
-  * Nombre d'adresses    : 2497
-* **75-5 - PARIS**
-  * Nombre de communes   : 8
-  * Nombre d'adresses    : 4403
-* **75-6 - PARIS**
-  * Nombre de communes   : 6
-  * Nombre d'adresses    : 2720
-* **75-7 - PARIS**
-  * Nombre de communes   : 6
-  * Nombre d'adresses    : 3628
-* **75-8 - PARIS**
-  * Nombre de communes   : 8
-  * Nombre d'adresses    : 2802
+* **75 - PARIS**
+  * Nombre de communes   : 40
+  * Nombre d'adresses    : 16050
 * **76 - SEINE MARITIME**
   * Nombre de communes   : 746
   * Nombre d'adresses    : 52561
@@ -306,12 +288,9 @@ Result of above command
 * **91 - ESSONNE**
   * Nombre de communes   : 196
   * Nombre d'adresses    : 32514
-* **92-1 - HAUTS-DE-SEINE**
-  * Nombre de communes   : 14
-  * Nombre d'adresses    : 4769
-* **92-2 - HAUTS-DE-SEINE**
-  * Nombre de communes   : 22
-  * Nombre d'adresses    : 5497
+* **92 - HAUTS-DE-SEINE**
+  * Nombre de communes   : 36
+  * Nombre d'adresses    : 10266
 * **93 - SEINE SAINT DENIS**
   * Nombre de communes   : 40
   * Nombre d'adresses    : 12225
@@ -321,19 +300,19 @@ Result of above command
 * **95 - VAL D OISE**
   * Nombre de communes   : 185
   * Nombre d'adresses    : 31141
-* **97-1 - GUADELOUPE**
+* **971 - GUADELOUPE**
   * Nombre de communes   : 34
   * Nombre d'adresses    : 11311
-* **97-2 - MARTINIQUE**
+* **972 - MARTINIQUE**
   * Nombre de communes   : 34
   * Nombre d'adresses    : 8884
-* **97-3 - GUYANE**
+* **973 - GUYANE**
   * Nombre de communes   : 22
   * Nombre d'adresses    : 5255
-* **97-4 - LA REUNION**
+* **974 - LA REUNION**
   * Nombre de communes   : 24
   * Nombre d'adresses    : 16435
-* **97-6 - MAYOTTE**
+* **976 - MAYOTTE**
   * Nombre de communes   : 17
   * Nombre d'adresses    : 5184
 ## Statistique totale
