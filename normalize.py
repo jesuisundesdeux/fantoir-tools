@@ -429,7 +429,10 @@ with open(fantoir_file, 'rb') as textfile:
 # Init README template
 shutil.copyfile("README_template.md", "README.md")
 with open("README.md", 'a') as docfile:
-    docfile.write("## Statistique par departement\n")
+    docfile.write("## Statistique par departement\n\n")
+
+    docfile.write("| Departement | Nb villes | nb rues |\n")
+    docfile.write("|-------------|-----------|---------|\n")
 
     allnbtowns = 0
     allnbstreets = 0
@@ -458,9 +461,10 @@ with open("README.md", 'a') as docfile:
                 for street in alldatas[codedep]['towns'][codetown]['streets']:
                     townfile.write(street)
 
-        docfile.write("* **%s - %s**\n" % (codedep, alldatas[codedep]['name']))
-        docfile.write("  * Nombre de communes   : %s\n" % nbtowns)
-        docfile.write("  * Nombre d'adresses    : %s\n" % nbstreets)
+        docfile.write("| %s - %s | %s | %s |\n" % (codedep, alldatas[codedep]['name'],nbtowns,nbstreets))
+        # docfile.write("* **%s - %s**\n" % (codedep, alldatas[codedep]['name']))
+        # docfile.write("  * Nombre de communes   : %s\n" % nbtowns)
+        # docfile.write("  * Nombre d'adresses    : %s\n" % nbstreets)
 
     docfile.write("## Statistique totale\n")
     docfile.write("  * Nombre de communes   : %s\n" % allnbtowns)
