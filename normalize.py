@@ -428,7 +428,12 @@ with open(fantoir_file, 'rb') as textfile:
 
 # Init README template
 shutil.copyfile("README_template.md", "README.md")
-with open("README.md", 'a') as docfile:
+with open("README.md", 'a') as docfile,open('villes.csv','w') as alltownfile:
+
+    # CSV
+    alltownfile.write("codedep;dep;codecom;com\n")
+    
+    # Readme
     docfile.write("## Statistique par departement\n\n")
 
     docfile.write("| Departement | Nb villes | nb rues |\n")
@@ -453,10 +458,14 @@ with open("README.md", 'a') as docfile:
             allnbstreets += len(alldatas[codedep]['towns'][codetown]['streets'])
 
             # Save normalized streets to file
-            filename = "%s/%s-%s.csv" % (path,codetown,normalize(alldatas[codedep]['towns'][codetown]['name']))
+            townname = normalize(alldatas[codedep]['towns'][codetown]['name'])
+            filename = "%s/%s-%s.csv" % (path,codetown,townname)
             with open(filename, 'w') as townfile:
                 export = "cdep;cdir;ccom;crivo;nvoie;voie;lstreet;lstreet_norm;tcom;crur;cpol;prel;ppart;pfict;cann;dann;dcre;cmajic;tvoie;cdit;dmot\n"
                 townfile.write(export)
+
+                # Write CSV values
+                alltownfile.write(f"{codedep};{depname};{codetown};{townname}\n")
 
                 for street in alldatas[codedep]['towns'][codetown]['streets']:
                     townfile.write(street)
